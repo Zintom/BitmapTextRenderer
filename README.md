@@ -7,13 +7,13 @@ MonoGame/XNA uses a text rendering process which involves generating "SpriteFont
 ## Solution
 As this is for folks with Windows, we have access to all the fun stuff from WinForms etc, including GDI+ which has an excellent text rendering pipeline through Drawing.Graphics(or you can use TextRenderer if you prefer GDI).
 
-The solution is to draw text with GDI+ and convert the output to a Texture2D for drawing with the SpriteBatch; my BitmapTextRenderer class does all this for you in a neat package which includes:
+The solution is to draw text with GDI+ and convert the output to a Texture2D for drawing with the SpriteBatch; my BitmapTextRenderer class does this all for you in a neat package which includes:
 
-### Automatic conversion between WinForms and Xna types
-When setting colours you can provide the class Xna/Monogame types and the class will automatically convert these to the relevant WinForms equivalent, so from an external point of view you can't even notice that we are using GDI+.
+#### Automatic conversion between WinForms and Xna types
+When setting colours you can provide the class with Xna/Monogame types and the class will automatically convert these to the relevant WinForms equivalent, so from an external point of view you can't even notice that we are using GDI+.
 
-### Saving of size/scale properties for easy reference
-Whenever you modify the state of the object it has to re-measure and render the text; usually with Xna or GDI+ you have to manually call a MeasureText function and pass all the attributes like Font etc in, it just become a pain and introduces a lot of repetative boilerplate code, so what my class does is store all these handy values from the render process in publically accessible Properties (Width, Height, Size, Scale etc).
+#### Saving of size properties for easy near-future reference
+Whenever you modify the state of the BitmapTextRenderer it has to re-measure and render the text; usually with Xna or GDI+ you have to manually call a MeasureText function and pass all the attributes like Font etc in, it just become a pain and introduces a lot of repetative boilerplate code, so what my class does is store all these handy values from the render process in publically accessible Properties (Width, Height, Size, Scale etc) and only does the measurement once.
 
 TODO: Provide example screenshots of space saving.
 
