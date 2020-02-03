@@ -119,45 +119,6 @@ namespace Zintom.Forms
             RenderText();
         }
 
-        //        private void RenderText()
-        //        {
-        //            if (!initialized) return;
-
-        //#if DEBUG
-        //            Stopwatch stopwatch = new Stopwatch();
-        //            stopwatch.Start();
-        //#endif
-
-        //            var size = System.Windows.Forms.TextRenderer.MeasureText(text, font);
-        //            this.size = new Vector2(size.Width, size.Height);
-
-        //            // Create the final bitmap
-        //            var bmpSurface = new System.Drawing.Bitmap(size.Width, size.Height);
-        //            var g = System.Drawing.Graphics.FromImage(bmpSurface);
-        //            g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-        //            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.High;
-        //            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-        //            g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-
-        //            // Draw the text to the clean bitmap
-        //            System.Windows.Forms.TextRenderer.DrawText(g, text, font, System.Drawing.Point.Empty, foreColor, backColor);
-
-        //            // Save the bitmap to a stream and then re-load it as a Texture2D.
-        //            using (MemoryStream stream = new MemoryStream())
-        //            {
-        //                bmpSurface.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
-        //                renderSurface = Texture2D.FromStream(graphics, stream);
-        //            }
-
-        //            bmpSurface.Dispose();
-        //            g.Dispose();
-
-        //#if DEBUG
-        //            stopwatch.Stop();
-        //            Console.WriteLine("BitmapTextRenderer: Rendered text in " + stopwatch.ElapsedMilliseconds + "ms");
-        //#endif
-        //        }
-
         private void RenderText()
         {
             if (!initialized) return;
